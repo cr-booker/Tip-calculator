@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" > 
+  </head>
+<body>
+  <main class="flex-container">
+    <div id="tip-calculator" class="grid-container">
+      <div class=" input-group bill-input-group">
+        <label for="bill-amount">Bill</label>
+        <p class="error-message bill-error-message"></p>
+          <i class="material-icons">attach_money</i>
+        <input class="shadow" type="text" name="bill-amount" id="bill-amount" placeholder="0.00" autofocus autocomplete="off">
+      </div>
+      <div class="input-group tip-input-group">
+        <label class="flex-container" for="custom-tip">Tip<i class="material-icons label-icon">percent</i></label>
+        <div class="tip-options grid-container">
+          <button class="tip-select-btn flex-container" type="button">5<i class="material-icons btn-icon">percent</i></button>
+          <button class="tip-select-btn flex-container" type="button">10<i class="material-icons btn-icon">percent</i></button>
+          <button class="tip-select-btn flex-container active-btn" type="button">15<i class="material-icons btn-icon">percent</i></button>
+          <button class="tip-select-btn flex-container" type="button">20<i class="material-icons btn-icon">percent</i></button>
+          <button class="tip-select-btn flex-container" type="button">25<i class="material-icons btn-icon">percent</i></button>
+          <input type="text"  name="custom-tip" id="custom-tip" placeholder="custom" autocomplete="off">
+        </div>
+      </div>
+      <div class="input-group person-count-input-group">
+        <label for="person-count">Number of People</label> 
+        <i class="material-icons">person</i>
+        <input class="shadow" type="text" name="person-count" id="person-count" value="1" autocomplete="off">
+      </div>
+      <div id="results-container" class="flex-container">
+        <div>
+          <div class="flex-container result-group tip-result-group">
+            <div>
+              <p>Tip Amount</p>
+              <p class="per-person hidden">/ person</p>
+            </div>
+            <div>
+              <p class="calculation-result tip-calculation-result">$0.00</p>
+            </div>
+          </div>
+          <div class="flex-container result-group total-result-group">
+            <div>
+              <p>Total</p>
+              <p class="per-person hidden">/ person</p>
+            </div>
+            <div>
+              <p class="calculation-result total-calculation-result">$0.00</p>
+            </div>
+          </div>
+        </div>
+        <button id="calculate-btn" type="button">Calculate</button>
+      </div>
+    </div> 
+  </main>
+  <script src="./tip.js"></script>
+</body>
+</html>

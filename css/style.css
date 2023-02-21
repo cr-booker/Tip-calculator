@@ -1,0 +1,262 @@
+/* Reset*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*---------*/
+/* Palette */
+/*---------*/
+
+/* colors */
+:root{
+    --mint-cream: #F0F7EE;
+    --paynes-grey:#2E5060;
+    --anti-flash-white: #F1F6F8;
+    --bali-hai: #7A98AA;
+    --sky-blue: #b6e7ff;
+    --dark-gray: #999;
+    --tundora: #444;
+    --english-violet: #60435F;
+    --malibu: #51c3fb;
+
+
+    --body-bg: var(--english-violet);
+    --primary-bg: var(--bali-hai);
+    --secondary-bg: var(--paynes-grey);
+
+    --primary-clr: var(--anti-flash-white);
+
+    --primary-btn-bg: var(--sky-blue);
+    --primary-btn-bg-hover: var(--malibu);
+    --secondary-btn-bg: var(--paynes-grey);
+
+    --text-input-clr: var(--paynes-grey);
+    --text-input-bg: var(--mint-cream);
+
+    --active-btn-clr: var(--paynes-grey);
+    --active-btn-bg: var(--sky-blue);
+
+    --input-outline-clr: var(--paynes-grey);
+    --input-icon-clr: var(--dark-gray);
+    --box-shadow-clr: var(--tundora);
+}
+
+/*-----------*/
+/* utilites */
+/*----------*/
+.flex-container{
+    display: flex;
+}
+
+.grid-container{
+    display: grid;
+}
+
+.btn-icon{
+    font-size: 1.3rem;
+}
+
+.active-btn{
+    background: var(--active-btn-bg);
+}
+
+.shadow {
+	box-shadow: 3px 4px 9px var(--box-shadow-clr);
+}
+
+.hidden{
+    display: none;
+}
+
+/*------------------*/
+/* Element Styling */
+/*-----------------*/
+
+body{
+    background: var(--body-bg);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+i{
+    pointer-events: none; 
+}
+
+input{
+    font-weight: 700;
+    color: #fddb3a;
+    font-size: 1rem;
+    padding: .3em;
+    background: var(--text-input-bg);
+    border: none;
+    border-radius: 10px;
+    color: var(--text-input-clr);
+}
+
+input:focus{
+    outline: 4px solid var(--input-outline-clr);
+}
+
+label{   
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: .3em;
+}
+
+/*---------*/
+/* Layout */
+/*--------*/
+#tip-calculator{
+    border-radius: 20px;
+    background: var(--primary-bg);
+    width: 80%;
+    max-width: 980px;
+    margin: 1em auto;
+    box-shadow: 12px 10px 10px rgb(32, 32, 32);
+    grid-template-rows: auto auto auto auto;
+    gap: 1.2em;
+    padding: 2em 1em;
+}
+
+.input-group{
+    position: relative;
+    margin: auto;
+    width: 90%;
+}
+
+.person-count-input-group,
+.bill-input-group{
+    position: relative;
+}
+
+.person-count-input-group i,
+.bill-input-group i{
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    left: 10px;
+    color: #9a9d99;
+}
+
+#bill-amount,
+#person-count{
+    width: 100%;
+    text-align: right;
+}
+
+.bill-input-icon{
+    position: absolute;
+}
+
+/* Tip group */
+.tip-select-btn,
+#custom-tip{
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    min-width: 4.30em;
+    height: 2.5em;
+    text-align: center;
+}
+
+.tip-options{
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+}
+
+.tip-select-btn{
+    padding: .4em 2em;
+    align-items: center;
+    color: var(--primary-clr);
+    background: var(--secondary-btn-bg);
+    justify-content: center;
+}
+
+.active-btn{
+    color: var(--active-btn-clr);
+    background: var(--active-btn-bg);
+}
+
+/* Result group */
+#results-container{
+    border-radius: 1em;
+    color: var(--primary-clr);
+    background: var(--secondary-btn-bg);
+    font-size: .89rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-group{
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5em 0;
+    padding: 0 1em;
+}
+
+.calculation-result{
+    font-size: 1.7rem;
+}
+
+#calculate-btn{
+    width: 70%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--primary-btn-bg);
+    border: none;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: .5em 0;
+}
+
+#calculate-btn:hover,
+#calculate-btn:focus{
+   background: var(--primary-btn-bg-hover);
+}
+
+/*==================*/
+/*    M. Queries   */
+/*=================*/
+@media (min-width:50em){
+    #tip-calculator{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .tip-input-group{
+        grid-row-start: 2;
+    }
+
+    .person-count-input-group{
+        grid-row-start: 3;
+    }
+
+
+    #results-container{
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
